@@ -1,0 +1,84 @@
+:root {
+  --accent: #00838F;
+  --bg: #F5F7FA;
+  --card: #FFFFFF;
+  --text: #2B2B2B;
+  --muted: #5F6368;
+  --line: #E3E7EC;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --accent: #4DD0E1;
+    --bg: #121417;
+    --card: #1C1F24;
+    --text: #E6E6E6;
+    --muted: #9AA0A6;
+    --line: #2C3036;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+a { color: var(--accent); }
+header { background: linear-gradient(90deg, #00838F, #7D3C98); }
+.bar {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand { color: #FFF; font-weight: 700; font-size: 1.15rem; text-decoration: none; }
+.langs { display: flex; flex-wrap: wrap; gap: 4px 14px; }
+.langs a { color: #FFF; opacity: .85; text-decoration: none; font-size: .95rem; }
+.langs a:hover { opacity: 1; text-decoration: underline; }
+.langs a[aria-current] { opacity: 1; font-weight: 700; text-decoration: underline; }
+main {
+  max-width: 780px;
+  margin: 28px auto;
+  padding: 32px 28px;
+  background: var(--card);
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .08);
+}
+h1 { margin: 0 0 4px; font-size: 1.9rem; line-height: 1.25; }
+.updated { margin: 0 0 8px; color: var(--muted); }
+h2 {
+  margin: 32px 0 8px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  font-size: 1.25rem;
+}
+h3 { margin: 20px 0 4px; font-size: 1.05rem; }
+p { margin: 0 0 12px; }
+ul { margin: 0 0 12px; padding-left: 1.4em; }
+li { margin-bottom: 4px; }
+.language-list { list-style: none; padding: 0; margin-top: 24px; }
+.language-list li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+}
+.lang-name { min-width: 120px; font-weight: 600; }
+.doc-links { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+footer {
+  max-width: 780px;
+  margin: 0 auto 40px;
+  padding: 0 28px;
+  color: var(--muted);
+  font-size: .92rem;
+}
+@media (max-width: 640px) {
+  main { margin: 0; padding: 22px 18px; border-radius: 0; box-shadow: none; }
+  footer { padding: 18px; }
+}
